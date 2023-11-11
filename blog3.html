@@ -47,10 +47,10 @@
 									<p> Representing multidimensional data within the confines of a two-dimensional observation space, whether on paper or a screen, poses a formidable challenge. Over time, various tools and methods, including star plots, parallel coordinates, and scatterplot matrices, have been developed to adeptly convey multiple attribute information through a singular graph. In this context, I have explained the strength and limitations of the scatterplot matrix as one such tool, using a car dataset as an illustrative example. Python and Javascript serve as the primary languages employed for crafting these visualizations.</p>
 								<div class="image main"><img src="images/image010.jpg" alt="" /></div>
 
-								<p>The main principle of a scatterplot matrix is to provide a visual representation of the relationships between multiple variables in a dataset by displaying scatterplots for all possible pairs of variables. It allows for a comprehensive exploration of pairwise interactions, enabling the identification of patterns, trends, and potential correlations.</p>
+								
 
-    <h2>Key Principles:</h2>
-
+    <h4>Key Principles:</h4>
+	<p>The main principle of a scatterplot matrix is to provide a visual representation of the relationships between multiple variables in a dataset by displaying scatterplots for all possible pairs of variables. It allows for a comprehensive exploration of pairwise interactions, enabling the identification of patterns, trends, and potential correlations.</p>
     <ol>
         <li><strong>Pairwise Comparisons:</strong> A scatterplot matrix compares each variable in the dataset with every other variable, resulting in a grid of scatterplots. Each scatterplot represents the relationship between two specific variables.</li>
 
@@ -67,16 +67,16 @@
         <li><strong>Data Point Density:</strong> The density of data points in each scatterplot provides insights into the concentration of observations and helps identify potential outliers.</li>
     </ol>
 
-    <p>Overall, the scatterplot matrix is a powerful tool for exploratory data analysis, providing a visual summary of the relationships within a dataset and aiding in the identification of interesting patterns that can guide further investigation.</p>
+  	 <p>Overall, the scatterplot matrix is a powerful tool for exploratory data analysis, providing a visual summary of the relationships within a dataset and aiding in the identification of interesting patterns that can guide further investigation.</p>
 
- <p>While scatterplot is suitable for 4 or 5 features, scatterplot matrix can accomodate as many features as possible at the cost of adding cognitive load on the observer.</p>
-							<p>Understanding the nuances between a scatterplot matrix and a simple scatterplot is crucial in data visualization, as each method brings its own set of advantages and disadvantages to the table. A scatterplot matrix stands out for its ability to provide a comprehensive view of multivariate relationships, allowing analysts to explore interactions among multiple variables simultaneously. While this approach facilitates a holistic understanding of the dataset, it can be prone to visual overload and interpretation complexities, particularly as the number of variables increases. On the other hand, a simple scatterplot offers simplicity and clarity in visualizing the relationship between two variables, making it an efficient choice for focused analyses. Yet, this simplicity comes at the cost of potentially missing out on complex interactions present in the dataset. To navigate these trade-offs, a closer examination of the advantages and disadvantages of each method is essential, ensuring that the chosen visualization aligns with the specific goals of the analysis and the nature of the data under scrutiny.</p>
-								<div class="image main"><img src="images/image012.png" alt="" /><figcaption>(Excerpt of Data)</figcaption></div>
-									<p>In the following section, a scatterplot is compared with a scatterplot matrix. Car Data set is used for plotting. It has Name of the Car Models as data object along with its features such as Number of Engines, Horsepower, Weight & Retail Price etc. as attributes. </p>
+	 <p>While scatterplot is suitable for 4 or 5 features, scatterplot matrix can accomodate as many features as possible at the cost of adding cognitive load on the observer.</p>
+	 <p>Understanding the nuances between a scatterplot matrix and a simple scatterplot is crucial in data visualization, as each method brings its own set of advantages and disadvantages to the table. A scatterplot matrix stands out for its ability to provide a comprehensive view of multivariate relationships, allowing analysts to explore interactions among multiple variables simultaneously. While this approach facilitates a holistic understanding of the dataset, it can be prone to visual overload and interpretation complexities, particularly as the number of variables increases. On the other hand, a simple scatterplot offers simplicity and clarity in visualizing the relationship between two variables, making it an efficient choice for focused analyses. Yet, this simplicity comes at the cost of potentially missing out on complex interactions present in the dataset. To navigate these trade-offs, a closer examination of the advantages and disadvantages of each method is essential, ensuring that the chosen visualization aligns with the specific goals of the analysis and the nature of the data under scrutiny.</p>
+	 <div class="image main"><img src="images/image012.png" alt="" /><figcaption>(Excerpt of Data)</figcaption></div>
+	<p>In the following section, a scatterplot is compared with a scatterplot matrix. Car Data set is used for plotting. It has Name of the Car Models as data object along with its features such as Number of Engines, Horsepower, Weight & Retail Price etc. as attributes. </p>
 
-								<h1>Comparison of Scatterplot Matrix vs. Simple Scatterplot</h1>
+	<h4>Comparison of Scatterplot Matrix vs. Simple Scatterplot</h4>
 
-    <h2>Scatterplot Matrix:Pros</h2>
+    <h4>Scatterplot Matrix:Pros</h4>
     <p>
         1. <strong>Multivariate Exploration:</strong> Scatterplot matrices enable the simultaneous exploration of relationships between multiple variables.
         2. <strong>Comprehensive Overview:</strong> With a scatterplot matrix, you can quickly observe patterns and correlations across all pairs of variables in a single view.
@@ -87,14 +87,14 @@
 								<div class="image main"><img src="images/image011.jpg" alt="" /><figcaption>(Scatterplot matrix with n=4)</figcaption></div>
 									<p>The diagonal sub-plots show histogram of a particular features. Note that, to display 4 attributes at a time a total of 6 scatterplots are required by formula (n*n-n)/2. Diagonaly opposite sub-plots are just mirror image of each other.</p>
 
-    <h2>Scatterplot Matrix:Cons</h2>
+    <h4>Scatterplot Matrix:Cons</h4>
     <p>
         1. <strong>Visual Overload:</strong> As the number of variables increases, a scatterplot matrix can become visually overwhelming and complex.
         2. <strong>Limited to Continuous Data:</strong> Scatterplot matrices work best with continuous data, and handling categorical variables may require alternative visualizations.
         3. <strong>Interpretation Complexity:</strong> Analyzing a scatterplot matrix requires careful attention to details, and patterns can be difficult to interpret, especially with many variables.
     </p>
 
-    <h2>Single Scatterplot: Pros</h2>
+    <h4>Single Scatterplot: Pros</h4>
     <p>
         1. <strong>Simplicity:</strong> Simple scatterplots are easier to create and interpret, making them a quick and straightforward option.
         2. <strong>Focused Analysis:</strong> Simple scatterplots allow for a more focused analysis when the primary interest is in understanding the relationship between two variables.
@@ -103,10 +103,10 @@
 	<p>The scatter plot below is designed to highlight distinctive features of various car models. The primary scatter plot illustrates the relationship between the weight (in kilograms) of the car and the horsepower (HP) of the engine, as well as the car type and its price. Consequently, the plot effectively presents four key attributes of the car. Notably, it is a responsive plot, allowing users to hover over any data point to reveal the corresponding car model's name. Additionally, users can access further details about the car, such as mileage and engine specifications, by clicking on the data point (feel free to play around). This supplementary information will be displayed in a tabular format below the plot.</p>
 	<p><a href = "https://glitch.com/edit/#!/this-one-data-viz-a2?path=d3.v5.min.js%3A1%3A0">Source code for above responsive plot can accessed from here</a></p>
     
-									 <script src="d3.v5.min.js"></script>
-									<script>
+	<script src="d3.v5.min.js"></script>
+	<script>
 
- const table = d3.select("#data-table");
+ 	const table = d3.select("#data-table");
         const tableBody = d3.select("#data-table-body");
 
         // Setting-up the SVG container for the scatter plot
