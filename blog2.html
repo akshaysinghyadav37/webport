@@ -45,7 +45,7 @@
 									<h1>Unleashing The Potential of MS Excel </h1>
 									<p>Far beyond its reputation as a spreadsheet program, Excel emerges as a versatile ally, empowering users to optimize pump and pipe selections, calculate earthwork volumes efficiently, and strategically allocate jobs. By delving into these practical applications, we aim to showcase the profound impact Excel can have in streamlining complex engineering tasks, demonstrating its versatility as a formidable asset in the hands of designers, analysts, and project managers. </p>
 								</header>
-								<div class="image main"><img src="images/image006.jpg" alt="" /><figcaption>Picture: Emergency Mockdrill and First aid training at a green field project site in Odisha (India).</figcaption></div>
+								<div class="image main"><img src="images/image006.png" alt="" /><figcaption>Picture: Topography of the land using 3D Charts.</figcaption></div>
 						
 								<p>
         Excel is conventionally known for its role in tabulated data analysis and pivot charts. However, it can be transformed into an interactive interface, akin to HTML+CSS+Javascript experiences. In this article, we explore three examples of Excel sheets that go beyond conventional tabular calculations and simplistic data visualization tools. These sheets are designed for engineering calculations and are easily reproducible, showcasing the multifaceted capabilities of Excel.
@@ -56,7 +56,7 @@
 <p>This Excel sheet serves as a powerful tool for engineers involved in selecting the optimal pump and pipe size for a given flow network. The yellow cells in the sheet prompt users for essential inputs, which can be conveniently provided through either parametric input or dropdown selection, enhancing the user experience.</p>
 
 <p>Crucially, the sheet accommodates currency and electricity prices, allowing users to tailor these values according to specific project requirements. Beyond these inputs, users are tasked with entering the physical properties of the fluid to be pumped and specifying the number of valves and fittings. The significance of these inputs lies in the delicate balance between material cost and pumping cost over the design life.</p>
-
+<div class="image main"><img src="images/image007.png" alt="" /><figcaption>User input is required on yellow shells, measurement unit should be selected from drop down</figcaption></div>
 <p>The design process involves a thoughtful selection of suction and delivery pipe sizes, considering that while larger pipe diameters may incur higher one-time material costs (pipes, valves, fittings), opting for smaller diameters could result in elevated pump operational costs. This dynamic interplay between material and operational costs is visualized through the Excel sheet, offering a comprehensive understanding of the trade-offs involved in pump and pipe selection.</p>
 
 <p>Beyond mere calculations, the sheet encompasses additional tabs designed for storing data and providing insightful comments on pipe and fittings selection. Leveraging basic fluid mechanics equations, the sheet facilitates the computation of critical parameters such as NPSH values and frictional losses.</p>
@@ -69,20 +69,21 @@
     <h2>2. Simpson Method for Earthwork Calculation: Efficient Volume Computation</h2>
 
 <p>In this innovative Excel sheet, we harness the power of the Simpson numeric method to streamline volume calculations in earthwork, specifically for excavation or filling projects. The objective is to simplify a traditionally complex task, providing users with a tool that ensures accuracy and efficiency in determining net filling or excavation quantities.</p>
-
-<h3>Understanding the Methodology:</h3>
+<p><a href = "">Click here to see a similar calculation performed using Python</a></p>
+<h4>Understanding the Methodology:</h4>
 
 <p>The sheet operates on the principles of Simpson's one-third formula, a robust numerical integration technique. This method, applied to earthwork calculations, involves breaking down the area into smaller sections and employing a specific formula to calculate the volume of each section. By aggregating these volumes, the tool derives a comprehensive assessment of the net filling or excavation quantity.</p>
-
-<h3>User-Friendly Input:</h3>
+<div class="image main"><img src="images/image008.png" alt="" /><figcaption>Final Calculation Sheet</figcaption></div>
+								
+<h4>User-Friendly Input:</h4>
 
 <p>To initiate the calculation process, users are required to input the reduced initial and final ground levels into the designated 'Initial' and 'Final' sheets. A crucial aspect is to ensure that the reduced level in a specific cell of the 'Final' sheet corresponds to the same point in the 'Initial' sheet. This meticulous alignment ensures accurate computation of the earthwork quantity.</p>
 
-<h3>Customizable Grid Configuration:</h3>
+<h4>Customizable Grid Configuration:</h4>
 
 <p>The main sheet provides users with the flexibility to adapt the tool to different survey specifications. The grid distances for the topographic survey, represented in cells B81 and B79, are currently set to 5 meters, indicating a 5x5-meter grid. However, users can effortlessly modify these values to align with their specific grid sizes, enabling the tool to cater to a diverse range of survey configurations.</p>
 
-<h3>Scalability:</h3>
+<h4>Scalability:</h4>
 
 <p>The tool is designed to accommodate larger areas by allowing users to insert additional rows and columns. This scalability feature ensures that the sheet remains adaptable to projects of varying sizes and complexities.</p>
 
@@ -99,7 +100,7 @@
     <p>
         Within this structured framework, each job variant (Ts) can be executed using various combinations and quantities of 25 BOQ items. What sets this sheet apart is the incorporation of two distinct payment rates, labeled as rate 1 and rate 2, allowing for a nuanced representation of the cost dynamics upon job completion.
     </p>
-
+<div class="image main"><img src="images/image009.png" alt="" /><figcaption>Select suitable combination from drop down on yellow highlighted shells</figcaption></div>
     <p>
         On the main sheet, users are prompted to input specific details in highlighted yellow cells. Dropdown options streamline the recording of user preferences, facilitating the formulation of job allocation configurations. The final cost of the job, both with and without taxes, is then automatically calculated at the bottom of the main sheet.
     </p>
