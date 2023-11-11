@@ -71,7 +71,8 @@
 
  <p>While scatterplot is suitable for 4 or 5 features, scatterplot matrix can accomodate as many features as possible at the cost of adding cognitive load on the observer.</p>
 							<p>Understanding the nuances between a scatterplot matrix and a simple scatterplot is crucial in data visualization, as each method brings its own set of advantages and disadvantages to the table. A scatterplot matrix stands out for its ability to provide a comprehensive view of multivariate relationships, allowing analysts to explore interactions among multiple variables simultaneously. While this approach facilitates a holistic understanding of the dataset, it can be prone to visual overload and interpretation complexities, particularly as the number of variables increases. On the other hand, a simple scatterplot offers simplicity and clarity in visualizing the relationship between two variables, making it an efficient choice for focused analyses. Yet, this simplicity comes at the cost of potentially missing out on complex interactions present in the dataset. To navigate these trade-offs, a closer examination of the advantages and disadvantages of each method is essential, ensuring that the chosen visualization aligns with the specific goals of the analysis and the nature of the data under scrutiny.</p>
-								<p>In the following section, a scatterplot is compared with a scatterplot matrix. Car Data set is used for plotting. It has Name of the Car Models as data object along with its features such as Number of Engines, Horsepower, Weight & Retail Price etc. as attributes. </p>
+								<div class="image main"><img src="images/image012.png" alt="" /><figcaption>(Excerpt of Data)</figcaption></div>
+									<p>In the following section, a scatterplot is compared with a scatterplot matrix. Car Data set is used for plotting. It has Name of the Car Models as data object along with its features such as Number of Engines, Horsepower, Weight & Retail Price etc. as attributes. </p>
 
 								<h1>Comparison of Scatterplot Matrix vs. Simple Scatterplot</h1>
 
@@ -82,8 +83,9 @@
         3. <strong>Efficient Space Utilization:</strong> Scatterplot matrices optimize space, making it easier to compare and contrast relationships.
         4. <strong>Diagonal Information:</strong> The diagonal often contains univariate visualizations, offering additional insights into the distribution of individual variables.
     </p>
-<p>The scatterplot matrix below illustrates four features of a car model. Horsepopwer, Car Weight, Retail Price and Car Type are plotted in a matrix form. <a hred ="">You can access the source code from here</a></p>.
-								<p>The diagonal sub-plots show histogram of a particular features. Note that, to display 4 attributes at a time a total of 6 scatterplots are required by formula (n*n-n)/2. Diagonaly opposite sub-plots are just mirror image of each other.</p>
+<p>The scatterplot matrix below illustrates four features of a car model. Horsepopwer, Car Weight, Retail Price and Car Type are plotted in a matrix form. <a hred ="https://www.kaggle.com/code/akshaya37/scatterplot-matrix/edit">You can access the source code from here</a></p>.
+								<div class="image main"><img src="images/image011.jpg" alt="" /><figcaption>(Scatterplot matrix with n=4)</figcaption></div>
+									<p>The diagonal sub-plots show histogram of a particular features. Note that, to display 4 attributes at a time a total of 6 scatterplots are required by formula (n*n-n)/2. Diagonaly opposite sub-plots are just mirror image of each other.</p>
 
     <h2>Scatterplot Matrix:Cons</h2>
     <p>
@@ -92,15 +94,253 @@
         3. <strong>Interpretation Complexity:</strong> Analyzing a scatterplot matrix requires careful attention to details, and patterns can be difficult to interpret, especially with many variables.
     </p>
 
-    <h2>Scatterplot: Pros</h2>
+    <h2>Single Scatterplot: Pros</h2>
     <p>
         1. <strong>Simplicity:</strong> Simple scatterplots are easier to create and interpret, making them a quick and straightforward option.
         2. <strong>Focused Analysis:</strong> Simple scatterplots allow for a more focused analysis when the primary interest is in understanding the relationship between two variables.
         3. <strong>Clear Presentation:</strong> Simple scatterplots are straightforward, making them suitable for presentations or reports where clarity is prioritized.
     </p>
 	<p>The scatter plot below is designed to highlight distinctive features of various car models. The primary scatter plot illustrates the relationship between the weight (in kilograms) of the car and the horsepower (HP) of the engine, as well as the car type and its price. Consequently, the plot effectively presents four key attributes of the car. Notably, it is a responsive plot, allowing users to hover over any data point to reveal the corresponding car model's name. Additionally, users can access further details about the car, such as mileage and engine specifications, by clicking on the data point (feel free to play around). This supplementary information will be displayed in a tabular format below the plot.</p>
-	<p>Source code for above responsive plot can accessed from here</p>
-    <h2>Simple Scatterplot:Cons</h2>
+	<p><a href = "https://glitch.com/edit/#!/this-one-data-viz-a2?path=d3.v5.min.js%3A1%3A0">Source code for above responsive plot can accessed from here</a></p>
+    
+									 <script src="d3.v5.min.js"></script>
+									<script>
+
+ const table = d3.select("#data-table");
+        const tableBody = d3.select("#data-table-body");
+
+        // Setting-up the SVG container for the scatter plot
+        const svg = d3.select('.scatter-plot')
+            .append('svg')
+            .attr('width', 800)
+            .attr('height', 600);
+
+        // data from the CSV file
+        d3.csv('https://cdn.glitch.com/3406f498-ccaa-4592-93d3-c0a3a2e58c43%2Fcars.csv?v=1604907277091').then(function(data) {
+            data.forEach(function(d) {
+                d.Horsepower = +d['Horsepower(HP)'];
+                d.Weight = +d['Weight'];
+            });
+
+            // Setting scales for x and y axes
+            const xScale = d3.scaleLinear()
+                .domain([0, 600]) // Extend x-axis to 600
+                .range([60, 780]);
+
+            const yScale = d3.scaleLinear()
+                .domain([0, 7000]) // Extend y-axis to 7000
+                .range([560, 40]);
+
+            // Creating X and Y axes with grid lines
+            svg.append('g')
+                .attr('class', 'x axis')
+                .attr('transform', 'translate(0, 560)')
+                .call(d3.axisBottom(xScale)
+                    .ticks(10)
+                    .tickSize(-520)
+                    .tickPadding(10)
+                );
+
+            svg.append('g')
+                .attr('class', 'y axis')
+                .attr('transform', 'translate(60, 0)')
+                .call(d3.axisLeft(yScale)
+                    .ticks(10)
+                    .tickSize(-720)
+                    .tickPadding(10)
+                );
+
+            // Adding labels to the X and Y axes
+            svg.append('text')
+                .attr('class', 'axis-label')
+                .attr('x', 400)
+                .attr('y', 600)
+                .text('Horsepower (HP)');
+
+            svg.append('text')
+                .attr('class', 'axis-label')
+                .attr('x', -300)
+                .attr('y', 10)
+                .attr('transform', 'rotate(-90)')
+                .text('Weight(Kg)');
+          
+          // defining color scale that we will use for price ecoding
+            const colorScale = d3.scaleLinear()
+                .domain([d3.min(data, d => +d['Retail Price']), d3.max(data, d => +d['Retail Price'])])
+                .range(["lightblue", "darkblue"]);
+            
+          // defining shape encoding for car type attribute
+            const carTypes = [...new Set(data.map(d => d['Type']))];
+            const shapeScale = d3.scaleOrdinal()
+                .domain(carTypes)
+                .range(d3.symbols);
+
+            // marking the data point
+            // Color scale for price and shapes for car type
+            svg.selectAll('.dot')
+                .data(data)
+                .enter()
+                .append('path')
+                .attr("class", "dot")
+                .attr("d", d => d3.symbol().type(shapeScale(d['Type']))())
+                .attr("transform", d => `translate(${xScale(+d['Horsepower(HP)'])}, ${yScale(+d['Weight'])})`)
+                .style("fill", d => colorScale(+d['Retail Price']))
+                .attr('cx', d => xScale(d.Horsepower))
+                .attr('cy', d => yScale(d.Weight))
+                .attr('r', 5)
+                .attr('fill', d => {
+                    switch (d.Type) {
+                        case 'Sedan': return 'red';
+                        case 'Sports Car': return 'blue';
+                        case 'SUV': return 'green';
+                        case 'Wagon': return 'orange';
+                        // Add more cases for other types
+                        default: return 'black';
+                    }
+                })
+          
+          // responsive - shows brand name on mouse hover
+                .on('mouseover', (d, i) => showCarBrand(d))
+                .on('mouseout', () => hideCarBrand())
+                .on('click', (d, i) => showTable(d));
+
+          //  responsive - shows detailed attribute list on clicking
+            function showTable(selectedData) {
+                table.style("display", "block");
+                tableBody.html("");
+                tableBody
+                    .selectAll("tr")
+                    .data(d3.entries(selectedData))
+                    .enter()
+                    .append("tr")
+                    .selectAll("td")
+                    .data(d => [d.key, d.value])
+                    .enter()
+                    .append("td")
+                    .text(d => d);
+            }
+
+          
+           function showCarBrand(selectedData) {
+                svg.append("text")
+                    .attr("x", xScale(selectedData.Horsepower) + 10)
+                    .attr("y", yScale(selectedData.Weight) - 10)
+                    .text(selectedData.Name)
+                    .attr("class", "car-brand");
+            }
+          
+          
+          
+          
+            function hideCarBrand() {
+                svg.select(".car-brand").remove();
+            }
+          
+          
+          
+          // Color Legend for car price
+            const colorLegend = svg.append("g")
+                .attr("transform", "translate(680, 160)");
+            
+          // background palette
+           colorLegend.append('rect')
+                  .attr("width", 100)
+                  .attr("height", 60)
+                  .style("fill", "lightgray")
+                  .style("fill-opacity", 0.3)
+                                                 
+            colorLegend.append("rect")
+                .attr("width", 20)
+                .attr("height", 20)
+                .style("fill", "lightblue");
+
+            colorLegend.append("text")
+                .text("Low Price")
+                .attr("x", 30)
+                .attr("y", 15)
+                .attr("dy", "0.35em");
+
+            colorLegend.append("rect")
+                .attr("y", 30)
+                .attr("width", 20)
+                .attr("height", 20)
+                .style("fill", "darkblue");
+
+            colorLegend.append("text")
+                .text("High Price")
+                .attr("x", 30)
+                .attr("y", 45)
+                .attr("dy", "0.35em");
+
+          
+          
+          // Add legends for car types
+            const legend = svg.append("g")
+                .attr("class", "legend")
+                .attr("transform", "translate(687, 35)");
+            
+         
+          // backgourd palette
+          legend.append('rect')
+                  .attr("width", 103)
+                  .attr("height", 135)
+                  .attr("x", -8)
+                  .attr("y", -10)
+                  .style("fill", "lightgray")
+                  .style("fill-opacity", 0.3)
+          
+          
+            legend.selectAll("path")
+                .data(carTypes)
+                .enter()
+                .append("path")
+                .attr("d", d => d3.symbol().type(shapeScale(d))())
+                .attr("transform", (d, i) => `translate(0, ${i * 25})`)
+                .style("fill", "gray");
+
+            legend.selectAll("text")
+                .data(carTypes)
+                .enter()
+                .append("text")
+                .text(d => d)
+                .attr("x", 15)
+                .attr("y", (d, i) => i * 25)
+                .attr("dy", "0.35em");
+       
+          // highlight the "Legends" box
+          
+          legend.append('rect')
+                  .attr("width", 103)
+                  .attr("height", 40)
+                  .attr("x", -8)
+                  .attr("y", -50)
+                  .style("fill", "lightgray")
+                  .style("fill-opacity", 0.6)
+          
+            // Add title "Legends" above the legends
+          
+          legend.append("text")
+                .attr("x", -5)
+                .attr("y", -20)
+                .attr("class", "legends")
+                .style("font-weight", "bold")
+                .style("font-size", "18px") 
+                .style("fill-opacity", 1)
+                .text("Legends");
+            
+            
+        });
+      
+      
+      
+      
+
+
+
+										
+									</script>
+									
+									<h2>Simple Scatterplot:Cons</h2>
     <p>
         1. <strong>Limited Multivariate Insights:</strong> Simple scatterplots provide insights into the relationship between only two variables, potentially missing complex interactions.
         2. <strong>Inefficient for Multiple Variables:</strong> Creating individual scatterplots for each pair can be time-consuming and may lead to information overload.
