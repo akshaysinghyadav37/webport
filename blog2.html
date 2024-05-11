@@ -50,7 +50,8 @@
 						
 								<p>
         Excel is conventionally known for its role in tabulated data analysis and pivot charts. However, it can be transformed into an interactive interface, akin to HTML+CSS+Javascript experiences. In this article, we explore three examples of Excel sheets that go beyond conventional tabular calculations and simplistic data visualization tools. These sheets are designed for engineering calculations and are easily reproducible, showcasing the multifaceted capabilities of Excel.
-    </p>
+    This page lists down some of the innovative excel programs that I created during my professional and academic journey.
+								</p>
 
    <h2>1. Pump and Pipe Selection: Optimizing Flow Networks</h2>
 
@@ -60,66 +61,38 @@
 <p>This Excel sheet serves as a powerful tool for engineers involved in selecting the optimal pump and pipe size for a given flow network. The yellow cells in the sheet prompt users for essential inputs, which can be conveniently provided through either parametric input or dropdown selection, enhancing the user experience.</p>
 <a href="store/Pipe & Pump Selection.xlsx" download> You can download the Pump and Pipe Selection MS Excel file from here.</a>
 								<p></p>
-<p>Crucially, the sheet accommodates currency and electricity prices, allowing users to tailor these values according to specific project requirements. Beyond these inputs, users are tasked with entering the physical properties of the fluid to be pumped and specifying the number of valves and fittings. The significance of these inputs lies in the delicate balance between material cost and pumping cost over the design life.</p>
-<div class="image main"><img src="images/image007.png" alt="" /><figcaption>User input is required on yellow Cells, measurement unit should be selected from drop down</figcaption></div>
-<p>The design process involves a thoughtful selection of suction and delivery pipe sizes, considering that while larger pipe diameters may incur higher one-time material costs (pipes, valves, fittings), opting for smaller diameters could result in elevated pump operational costs. This dynamic interplay between material and operational costs is visualized through the Excel sheet, offering a comprehensive understanding of the trade-offs involved in pump and pipe selection.</p>
+<p>Crucially, the sheet accommodates currency and electricity prices, allowing users to tailor these values according to specific project requirements and to make it easily relatable in monetory terms. </p>
 
-<p>Beyond mere calculations, the sheet encompasses additional tabs designed for storing data and providing insightful comments on pipe and fittings selection. Leveraging basic fluid mechanics equations, the sheet facilitates the computation of critical parameters such as NPSH values and frictional losses.</p>
 
-<p> The sheet emphasizes the importance of responsive calculations, positioning Excel beyond a conventional tabular tool and as an interactive interface for intricate engineering calculations.</p>
 
 
     <!-- ... -->
 
     <h2>2. Simpson Method for Earthwork Calculation: Efficient Volume Computation</h2>
 
-<p>In this innovative Excel sheet, we harness the power of the Simpson numeric method to streamline volume calculations in earthwork, specifically for excavation or filling projects. The objective is to simplify a traditionally complex task, providing users with a tool that ensures accuracy and efficiency in determining net filling or excavation quantities.</p>
+<p>In this sheet, we harness the power of the Simpson numeric method to streamline volume calculations in earthwork, specifically for excavation or filling projects. </p>
 <p><a href = "https://www.kaggle.com/code/akshaya37/volume-calculation-by-simpson-s-one-third-rule">Click here to see a similar calculation performed using Python</a></p>
-<h4>Understanding the Methodology:</h4>
 
-<p>The sheet operates on the principles of Simpson's one-third formula, a robust numerical integration technique. This method, applied to earthwork calculations, involves breaking down the area into smaller sections and employing a specific formula to calculate the volume of each section. By aggregating these volumes, the tool derives a comprehensive assessment of the net filling or excavation quantity.</p>
-<div class="image main"><img src="images/image008.png" alt="" /><figcaption >Final Calculation Sheet</figcaption></div>
-								
-<p>User-Friendly Input:</p>
-
-<p>To initiate the calculation process, users are required to input the reduced initial and final ground levels into the designated 'Initial' and 'Final' sheets. A crucial aspect is to ensure that the reduced level in a specific cell of the 'Final' sheet corresponds to the same point in the 'Initial' sheet. This meticulous alignment ensures accurate computation of the earthwork quantity.</p>
-
-<p>Customizable Grid Configuration:</p>
-
-<p>The main sheet provides users with the flexibility to adapt the tool to different survey specifications. The grid distances for the topographic survey, represented in cells B81 and B79, are currently set to 5 meters, indicating a 5x5-meter grid. However, users can effortlessly modify these values to align with their specific grid sizes, enabling the tool to cater to a diverse range of survey configurations.</p>
-
-<p>Scalability:</p>
+<p>"The key feature here is the scalability"</p>
 
 <p>The tool is designed to accommodate larger areas by allowing users to insert additional rows and columns. This scalability feature ensures that the sheet remains adaptable to projects of varying sizes and complexities.</p>
 
 <a href="store/Simpson Earth Work.xlsx" download> You can download the Simpson Earth Work MS Excel file from here.</a>
 								<p></p>
 								
-<p>By combining the mathematical rigor of Simpson's method with the user-friendly interface of Excel, this tool simplifies the often intricate process of earthwork volume calculation. It not only enhances accuracy but also offers customization options, making it a valuable asset for professionals involved in construction, civil engineering, and related fields.</p>
-
     <!-- ... -->
 
     <h2>3. Job Distribution and Bill of Quantity (BOQ): Strategic Work Allocation</h2>
 
    <p>
-        This Excel sheet serves as a comprehensive tool for efficiently allocating jobs to two contractors, introducing a systematic approach to job distribution and bill of quantity (BOQ) calculations. The job is intelligently segmented into six parts, labeled A to F, with each part offering four variants, T1 to T4, creating a three-tier job hierarchy.
+        This Excel sheet serves as a comprehensive tool for efficiently allocating jobs to two parties, introducing a systematic approach to job distribution and bill of quantity (BOQ) calculations. The job is intelligently segmented into six parts, labeled A to F, with each part offering four variants, T1 to T4, creating a three-tier job hierarchy.
     </p>
 
-    <p>
-        Within this structured framework, each job variant (Ts) can be executed using various combinations and quantities of 25 BOQ items. What sets this sheet apart is the incorporation of two distinct payment rates, labeled as rate 1 and rate 2, allowing for a nuanced representation of the cost dynamics upon job completion.
-    </p>
-<div class="image main"><img src="images/image009.png" alt="" /><figcaption text-align: center >Select suitable combination from drop down on yellow highlighted Cells</figcaption></div>
-    <p>
-        On the main sheet, users are prompted to input specific details in highlighted yellow cells. Dropdown options streamline the recording of user preferences, facilitating the formulation of job allocation configurations. The final cost of the job, both with and without taxes, is then automatically calculated at the bottom of the main sheet.
-    </p>
+   
 <a href="store/Job Distribution and BOQ.xlsx" download> You can download the Job Distribution and BOQ MS Excel file from here.</a>
 								<p></p>
     <p>
-        Notably, this sheet is designed to provide estimates for a staggering 2400 combinations of work allocations. The permutations arise from considering two contractors, six job sections, four job types, 25 BOQ items, and two rates. This flexibility can be adjusted based on specific project requirements, offering a dynamic tool for project managers.
-    </p>
-
-    <p>
-        In contrast to machine learning models, this Excel framework stands out for its practicality, addressing real-world scenarios where certain parameters resist categorization as regular parametric inputs. This adaptability makes it an invaluable resource for various applications, including plant dispatch, logistics optimization, and addressing challenges in power plant demand-supply balance. The tool empowers project managers to select optimal job allocations, minimizing overall project costs and delivering strategic insights grounded in the realities of project management.
+        Notably, this sheet is designed to provide estimates for a staggering 2400 combinations of work allocations. The permutations arise from considering two parties, six job sections, four job types, 25 BOQ items, and two rates. This flexibility can be adjusted based on specific project requirements, offering a dynamic tool for project managers.
     </p>
 
 
